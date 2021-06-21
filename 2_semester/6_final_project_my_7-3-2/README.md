@@ -14,7 +14,7 @@ $$f_1(x) = \ln(x), \ f_2(x) = -2x+14, f_3(x) = \frac{1}{2-x}+6$$ Их
 графики:
 
 <center>
-  <img src="graphics.png" alt="Графики функций" width="70%"/>
+  <img align="middle" src="graphics.png" alt="Графики функций" width="70%"/>
 </center>
 
 Кроме этого, программа может выполнять и некоторые другие вычисления.

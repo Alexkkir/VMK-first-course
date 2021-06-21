@@ -1,0 +1,3 @@
+C:/Users/1/Documents/EVM/2_semester/6 (project) (my 7-3-2)/MainProg/cmake-build-debug/CMakeFiles/MainProg.dir
+C:/Users/1/Documents/EVM/2_semester/6 (project) (my 7-3-2)/MainProg/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/1/Documents/EVM/2_semester/6 (project) (my 7-3-2)/MainProg/cmake-build-debug/CMakeFiles/rebuild_cache.dir

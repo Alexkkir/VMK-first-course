@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/1/Documents/EVM/algorithms_mail/7_hw/3_1/main.cpp
+iostream
+-
+vector
+-
+queue
+-
+string
+-
+map
+-
+set
+-
+algorithm
+-
+

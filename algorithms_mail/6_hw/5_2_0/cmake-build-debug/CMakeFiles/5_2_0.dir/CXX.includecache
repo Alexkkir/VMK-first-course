@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/1/Documents/EVM/algorithms_mail/6_hw/5_2_0/main.cpp
+iostream
+-
+vector
+-
+queue
+-
+string
+-
+map
+-
+set
+-
+algorithm
+-
+unordered_set
+-
+unordered_map
+-
+

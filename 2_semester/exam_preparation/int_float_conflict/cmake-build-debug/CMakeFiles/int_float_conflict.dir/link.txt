@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2021.1.1\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\int_float_conflict.dir/objects.a
+C:\MinGW\bin\ar.exe cr CMakeFiles\int_float_conflict.dir/objects.a @CMakeFiles\int_float_conflict.dir\objects1.rsp
+C:\MinGW\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\int_float_conflict.dir/objects.a -Wl,--no-whole-archive -o int_float_conflict.exe -Wl,--out-implib,libint_float_conflict.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\int_float_conflict.dir\linklibs.rsp

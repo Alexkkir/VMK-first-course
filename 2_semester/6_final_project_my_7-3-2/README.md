@@ -78,8 +78,7 @@ $$x_n = x_{n-1} - \frac{f(x_{n-1})}{f'(x_{n-1})}$$ Такая
 точками $x_k, x_{k+1}, f(x_{k+1}), f(x_k)$ с последующим суммированием.
 Метод может быть проиллюстрирован следующей картинкой:
 
-<img align="middle" src="int_metod.jpg" width="10%"/>
-<img align="middle" src="int_metod.jpg" width="40%"/>
+<img align="middle" src="int_metod.jpg" width="20%"/>
 
 
 Метод был применен для вычисления подынтегральных площей на отрезках,
@@ -137,5 +136,5 @@ Linux оно не имеет разрешения (указываемого по
 рисунке ниже. Там изображена диаграмма создания файлов и команды,
 которые были использованы.
 
-<img align="middle" src="diagramm.jpg" width="100%"/>
+<img align="middle" src="diagramm.jpg" width="80%"/>
 

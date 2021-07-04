@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1618521465 source:c:\users\1οκ\desktop\temporaryakirsfolder\exam\2_2\main.cpp
+	<stdio.h>
+	<stdlib.h>
+	<string>
+	<iostream>
+	<algorithm>
+

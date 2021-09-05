@@ -1,3 +1,0 @@
-C:/Users/1/Documents/EVM/algorithms_mail/6_hw/2_1 (dead paths)/cmake-build-debug/CMakeFiles/2_1__dead_paths_.dir
-C:/Users/1/Documents/EVM/algorithms_mail/6_hw/2_1 (dead paths)/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/1/Documents/EVM/algorithms_mail/6_hw/2_1 (dead paths)/cmake-build-debug/CMakeFiles/rebuild_cache.dir

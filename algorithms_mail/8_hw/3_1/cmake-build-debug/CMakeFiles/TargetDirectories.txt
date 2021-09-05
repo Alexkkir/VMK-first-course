@@ -1,3 +1,0 @@
-C:/Users/1/Documents/EVM/algorithms_mail/8_hw/3_1/cmake-build-debug/CMakeFiles/3_1.dir
-C:/Users/1/Documents/EVM/algorithms_mail/8_hw/3_1/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/1/Documents/EVM/algorithms_mail/8_hw/3_1/cmake-build-debug/CMakeFiles/rebuild_cache.dir

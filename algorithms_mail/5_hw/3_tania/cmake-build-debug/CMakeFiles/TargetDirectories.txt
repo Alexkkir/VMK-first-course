@@ -1,3 +1,0 @@
-C:/Users/1/Documents/EVM/algorithms_mail/5_hw/3_tania/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/1/Documents/EVM/algorithms_mail/5_hw/3_tania/cmake-build-debug/CMakeFiles/3_tania.dir
-C:/Users/1/Documents/EVM/algorithms_mail/5_hw/3_tania/cmake-build-debug/CMakeFiles/rebuild_cache.dir

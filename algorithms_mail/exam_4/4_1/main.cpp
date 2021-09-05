@@ -19,10 +19,48 @@ using std::set;
 #define INF 1000000000
 
 struct pair{
-    int x, y;
+    unsigned short x, y;
 };
 
-void print_v(vector<vector<int>> const &v) {
+struct MyQueue {
+    pair *body;
+    int first = 0, last = 0, bodysize;
+
+    MyQueue(int n) {
+        body = (pair*) malloc (n * sizeof(pair));
+        bodysize = n;
+    }
+
+    ~MyQueue() {
+        free(body);
+    }
+
+    void push(pair elem) {
+        body[last++] = elem;
+
+    }
+
+    pair extract() {
+        return (first < last) ? body[first++] : (pair) {0, 0};
+    }
+
+    void print() {
+        for (int i = first; i < last; i++) {
+            printf("%d %d; ", body[i].x, body[i].y);
+        }
+        printf("\n");
+    }
+
+    pair front() {
+        return body[first];
+    }
+
+    int empty() {
+        return first < last ? 0 : 1;
+    }
+};
+
+void print_v(vector<vector<short>> const &v) {
     for (int i = 0; i < v.size(); i++) {
         for (int j = 0; j < v[i].size(); j++) {
             printf("%d ", v[i][j] != INF ? v[i][j] : 0);
@@ -32,13 +70,34 @@ void print_v(vector<vector<int>> const &v) {
     printf("\n");
 }
 
+inline void enqueue (int *qi, short x, short y) {
+    *qi = (((int) x) << 16 | (int) y);
+}
+
+inline void dequeue (int *qi, short &x, short &y) {
+    x = short ((*qi) >> 16);
+    y = short ((*qi) & 0x0000ffff);
+}
+
 int main() {
     int n, m, k;
     scanf("%d%d%d", &n, &m, &k);
 
-    vector<vector<int>> board(n + 2, vector<int>(m + 2, 0));
+    vector<vector<short>> board(n + 2, vector<short>(m + 2, 0));
 
-    queue<pair> q;
+    for (int i = 0; i < n + 2; i++) {
+        board[i][0] = -1;
+        board[i][m + 1] = -1;
+    }
+
+    for (int j = 0; j < m + 2; j++) {
+        board[0][j] = -1;
+        board[n + 1][j] = -1;
+    }
+
+//    MyQueue q((n + 2) * (m + 2) + 1);
+    int *q = new int [(n + 2) * (m + 2) + 1];
+    int *qf = q, *ql = q;
 
     for (int i = 0; i < k; i++) {
         int x, y;
@@ -48,47 +107,50 @@ int main() {
         y++;
 
         board[x][y] = 1;
-        q.push({x, y});
+//        q.push({x, y});
+        *ql++ = (x << 16 | y);
     }
 
-    int rest = n * m - k;
     int max_dist = 0;
 
-//    print_v(board);
 
-    while(!q.empty()) {
-        pair p = q.front();
-        q.pop();
-
-//        printf("x, y %d %d\n", p.x, p.y);
-
-//        vector<pair> neighbours = {{p.x - 1, p.y}, {p.x + 1, p.y},
-//                                   {p.x, p.y - 1}, {p.x, p.y + 1}};
-        vector<pair> neighbours;
-        neighbours.clear();
-
-        if (p.x - 1 != 0) {
-            neighbours.push_back({p.x - 1, p.y});
-        }
-        if (p.x + 1 != n + 1) {
-            neighbours.push_back({p.x + 1, p.y});
-        }
-        if (p.y - 1 != 0) {
-            neighbours.push_back({p.x, p.y - 1});
-        }
-        if (p.y + 1 != m + 1) {
-            neighbours.push_back({p.x, p.y + 1});
+    print_v(board);
+    int u;
+    short x, y;
+    short v_x, v_y;
+    while(qf != ql) {
+//        pair p = q.extract();
+        u = *qf++;
+        x = ((short) u) >> 16;
+        y = ((short) u) & 0x0000ffff;
+        
+        v_x = x - 1, v_y = y;
+        if (board[v_x][v_y] == 0) {
+            board[v_x][v_y] = (unsigned short) ((int) board[x][y] + 1);
+            max_dist = MAX(max_dist, board[v_x][v_y]);
+            *ql++ = (((int) v_x) << 16 | (int) v_y);
         }
 
-        for (auto v : neighbours) {
-//            printf("\tv.x, v.y %d %d\n", v.x, v.y);
-            if (board[v.x][v.y] == 0) {
-                board[v.x][v.y] = board[p.x][p.y] + 1;
-                max_dist = MAX(max_dist, board[v.x][v.y]);
-                q.push({v.x, v.y});
-            }
+        v_x = x + 1, v_y = y;
+        if (board[v_x][v_y] == 0) {
+            board[v_x][v_y] = (unsigned short) ((int) board[x][y] + 1);
+            max_dist = MAX(max_dist, board[v_x][v_y]);
+            *ql++ = (((int) v_x) << 16 | (int) v_y);
         }
 
+        v_x = x, v_y = y - 1;
+        if (board[v_x][v_y] == 0) {
+            board[v_x][v_y] = (unsigned short) ((int) board[x][y] + 1);
+            max_dist = MAX(max_dist, board[v_x][v_y]);
+            *ql++ = (((int) v_x) << 16 | (int) v_y);
+        }
+
+        v_x = x, v_y = y + 1;
+        if (board[v_x][v_y] == 0) {
+            board[v_x][v_y] = (unsigned short) ((int) board[x][y] + 1);
+            max_dist = MAX(max_dist, board[v_x][v_y]);
+            *ql++ = (((int) v_x) << 16 | (int) v_y);
+        }
 //        print_v(board);
     }
 

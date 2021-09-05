@@ -26,6 +26,27 @@ int distance(pair a, pair b) {
     return abs(a.x - b.x) + abs(a.y - b.y);
 }
 
+struct MyQueue {
+    pair *body;
+    int ptr = 0, n_elems = 0, bodysize;
+
+    MyQueue(int n) {
+        body = (pair*) malloc (n * sizeof(pair));
+        bodysize = n;
+    }
+
+    ~MyQueue() {
+        free(body);
+    }
+
+    void insert(pair elem) {
+        body[ptr] = elem;
+        ptr++;
+    }
+
+    pair
+};
+
 int main() {
     int n, m, k;
     scanf("%d%d%d", &n, &m, &k);
